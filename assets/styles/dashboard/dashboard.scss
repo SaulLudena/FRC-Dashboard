@@ -1,0 +1,321 @@
+//importando variables
+@import "../modules/variables";
+//importando estilos reutilizables que contienen el body y la fuente
+@import "../modules/reutilizable";
+//importando mixins
+@import "../modules/mixins";
+
+/*--Estilos del nav superior--*/
+
+.nav-superior {
+    background-color: $blanco;
+    box-shadow: 0 2px 10px $gris-sombra;
+    height: 5rem;
+    .logo {
+        .logo-img {
+            width: 12rem;
+        }
+    }
+    .burger {
+        color: $gris;
+        border-radius: 100px;
+        transition: 0.2s ease-in-out;
+        font-size: 1rem;
+    }
+    .burger:hover {
+        background-color: $gris;
+        color: $blanco;
+    }
+    .burger:focus {
+        box-shadow: none;
+    }
+    .dropdown-admin {
+        .dropdown {
+            .activador {
+                color: $gris;
+                font-weight: bold;
+                .avatar {
+                    width: 2.5rem;
+                }
+            }
+            .link {
+                width: 20rem;
+                box-shadow: 1px 1px 10px $gris-sombra;
+                border: 0;
+                .link-item {
+                    .ref {
+                        padding: 1rem 1rem;
+                        color: $gris;
+                        font-weight: bold;
+                        i {
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .ref:focus {
+                        color: $gris;
+                    }
+                }
+                .link-item:hover {
+                    .ref {
+                        background-color: $verde-suave;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*--Estilos del menu principal--*/
+
+.layout-sidenav {
+    .layout-nav {
+        background-color: $blanco;
+        box-shadow: 1px 1px 10px $gris-suave;
+        .acordeon {
+            color: $gris;
+            font-weight: bold;
+            .menu {
+                .nav {
+                    width: 90%;
+                    margin: auto;
+                    .nav-item {
+                        text-align: center;
+                        border-radius: 5px;
+                        color: $gris;
+                        padding: 1rem 1.2rem;
+                    }
+                    .nav-item:hover {
+                        background-color: $gris;
+                        color: $blanco;
+                    }
+                }
+            }
+            .menu::-webkit-scrollbar {
+                width: 5px;
+            }
+            .menu::-webkit-scrollbar-thumb {
+                background-color: $gris;
+                border-radius: 10px;
+            }
+        }
+    }
+    .layout-content {
+        main {
+            .contenedor-fluido {
+                .botones-direct {
+                    padding: 0 0 2rem 0;
+                    .botones-container {
+                        .buttons-list {
+                            padding-left: 0;
+                            list-style: none;
+                            display: flex;
+                            gap: 1rem;
+                            .button-item {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 0.5rem;
+                                a {
+                                    @include mainTopButtons
+                                }
+                                .border {
+                                    @include mainTopButtons-border;
+                                }
+                            }
+                            .button-item:hover {
+                                a {
+                                    @include mainTopButtonsFocus;
+                                }
+                                .border {
+                                    @include mainTopButtons-borderFocus;
+                                }
+                            }
+                        }
+                    }
+                    .btn-agregar-container {
+                        .btn-agregar {
+                            @include addButton;
+                        }
+                        .btn-agregar:hover {
+                            background-color: $vede-agua-claro;
+                        }
+                        .mf{
+                            .modal-dialog{
+                                .modal-content{
+                                    border: 0;
+                                    border-radius: 20px;
+                                    padding: 1rem;
+                                    .modal-header{
+                                        .modal-title{
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    .modal-footer{
+                                        justify-content: space-between;   
+                                        .btn-confirm-add{
+                                            @include btn-confirm-add;
+                                        }
+                                        .btn-close-modal{
+                                            @include btn-close-modal;
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .table-container {
+                    overflow-x: visible; 
+                    table {
+
+                        border: 0;
+                        thead {
+                            tr {
+                                th {
+                                    @include border-tables-head;
+                                }
+                            }
+                        }
+                        tbody {
+                            tr {
+
+                                td {
+                                    margin-top: 50px;
+                                    @include border-tables;
+                                    .detail {
+                                        @include btn-detail;
+                                    }
+                                    .edit {
+                                        @include btn-edit;
+                                    }
+                                    .delete {
+                                        @include btn-delete;
+                                    }
+                                    .badge-aviable{
+                                        @include badge-aviable;
+                                    }
+                                    .badge-pending{
+                                        @include badge-pending;
+                                    }
+                                    .badge-expired{
+                                        @include badge-expired;
+                                    }
+                                    .badge-attending{
+                                        @include badge-attending;
+                                    }
+                                    .badge-enabled{
+                                        @include badge-enabled;
+                                    }
+                                    .badge-disabled{
+                                        @include badge-disabled;
+                                    }
+                                    .badge-not-enabled{
+                                        @include badge-not-enabled;
+                                    }
+                                }
+                                .img{   
+                                    img{
+                                        width: 3rem;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+                            tr:hover {
+                                background-color: $blanco-debil;
+                            }
+                        }
+                    }
+                    .mf{
+                        .modal-dialog{
+                            .modal-content{
+                                border: 0;
+                                border-radius: 20px;
+                                padding: 1rem;
+                                .modal-header{
+                                    .modal-title{
+                                        font-weight: bold;
+                                    }
+                                }
+                                .modal-footer{
+                                    justify-content: center;   
+                                    
+                                    .btn-close-modal{
+                                        @include btn-close-modal;
+                                    }
+                                    .btn-confirm-edit{
+                                        @include btn-confirm-edit;
+                                    }
+                                     .btn-confirm-delete{
+                                        @include btn-confirm-delete;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1830px){
+    .layout-sidenav {
+        .layout-content {
+            main {
+                .contenedor-fluido {
+
+                    .table-container {
+                        table {
+                            tbody {
+                                tr {
+                                    td {
+                                        margin-top: 50px;
+                                        @include border-tables;
+                                        .detail {
+                                            @include btn-detail;
+                                            margin-bottom: 5px;
+                                        }
+                                        .edit {
+                                            @include btn-edit;
+                                            margin-bottom: 5px;
+                                        }
+                                        .delete {
+                                            margin-bottom: 5px;
+                                            @include btn-delete;
+                                        }
+                                        .badge-aviable{
+                                            @include badge-aviable;
+                                        }
+                                        .badge-pending{
+                                            @include badge-pending;
+                                        }
+                                        .badge-expired{
+                                            @include badge-expired;
+                                        }
+                                        .badge-attending{
+                                            @include badge-attending;
+                                        }
+                                        .badge-enabled{
+                                            @include badge-enabled;
+                                        }
+                                        .badge-disabled{
+                                            @include badge-disabled;
+                                        }
+                                        .badge-not-enabled{
+                                            @include badge-not-enabled;
+                                        }
+                                    }
+                                }
+                                tr:hover {
+                                    background-color: $blanco-debil;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

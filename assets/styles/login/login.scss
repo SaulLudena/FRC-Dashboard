@@ -1,0 +1,139 @@
+@import "../modules/variables";
+@import "../modules/reutilizable";
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: content-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    .block {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        margin: auto;
+        align-content: center;
+        justify-content: center;
+    }
+    .block:nth-child(1) {
+        .background:nth-child(1) {
+            width: 100%;
+            height: 100vh;
+            background-color: $celeste;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .background-image {
+                .imagen {
+                    width: 350px;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .block:nth-child(2) {
+        .background {
+            display: flex;
+            align-items: center;
+            .background-login {
+                display: grid;
+                grid-template-rows: repeat(2, auto);
+                gap: 3rem;
+                .text-container {
+                    h1 {
+                        font-size: 4rem;
+                    }
+                    h1:nth-child(1) {
+                        color: $verde;
+                    }
+                    span {
+                        display: flex;
+                        h1:nth-child(2) {
+                            color: $celeste;
+                        }
+                    }
+                }
+                .miForm {
+                    display: grid;
+                    grid-template-rows: repeat(2, auto);
+                    gap: 2rem;
+                    .form-group {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 1.5rem;
+                        color: $verde;
+                        font-weight: bold;
+                        .L-1 {
+                            margin-bottom: 1rem;
+                        }
+                        .mi-input {
+                            border: 1px solid $verde;
+                            padding: 0.8rem;
+                            outline: none;
+                            transition: 0.2s ease-in-out;
+                            border-bottom: 3px solid $verde;
+                            border-radius: 5px;
+                        }
+                        .mi-input:focus {
+                            border: 1px solid $celeste-suave;
+                            border-bottom: 3px solid $celeste-suave;
+                            box-shadow: 1px 1px 10px $celeste-suave;
+                        }
+                    }
+                    .btn-enviar {
+                        padding: 1rem;
+                        outline: none;
+                        border: 0;
+                        background-color: $verde;
+                        color: $blanco;
+                        cursor: pointer;
+                        box-shadow: 1px 1px 10px #35353573;
+                        border-radius: 5px;
+                        transition: 0.2s ease-in-out;
+                    }
+                    .btn-enviar:hover {
+                        box-shadow: 1px 1px 10px #353535cc;
+                        background-color: $verde;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:885px) {
+    .container {
+        .block:nth-child(1) {
+            display: none;
+            width: 0;
+        }
+    }
+}
+
+@media screen and (max-width:485px) {
+    .container {
+        .block:nth-child(2) {
+            .background {
+                .background-login {
+                    .text-container {
+                        h1 {
+                            font-size: 2rem;
+                        }
+                    }
+                    .miForm {
+                        .form-group {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

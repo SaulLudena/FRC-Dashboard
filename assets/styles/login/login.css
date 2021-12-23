@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;535;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .block {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .block:nth-child(1) .background:nth-child(1) {
+  width: 100%;
+  height: 100vh;
+  background-color: #2399DB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .block:nth-child(1) .background:nth-child(1) .background-image .imagen {
+  width: 350px;
+  height: auto;
+}
+
+.container .block:nth-child(2) .background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .block:nth-child(2) .background .background-login {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  gap: 3rem;
+}
+
+.container .block:nth-child(2) .background .background-login .text-container h1 {
+  font-size: 4rem;
+}
+
+.container .block:nth-child(2) .background .background-login .text-container h1:nth-child(1) {
+  color: #8BBF32;
+}
+
+.container .block:nth-child(2) .background .background-login .text-container span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .block:nth-child(2) .background .background-login .text-container span h1:nth-child(2) {
+  color: #2399DB;
+}
+
+.container .block:nth-child(2) .background .background-login .miForm {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  gap: 2rem;
+}
+
+.container .block:nth-child(2) .background .background-login .miForm .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.5rem;
+  color: #8BBF32;
+  font-weight: bold;
+}
+
+.container .block:nth-child(2) .background .background-login .miForm .form-group .L-1 {
+  margin-bottom: 1rem;
+}
+
+.container .block:nth-child(2) .background .background-login .miForm .form-group .mi-input {
+  border: 1px solid #8BBF32;
+  padding: 0.8rem;
+  outline: none;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  border-bottom: 3px solid #8BBF32;
+  border-radius: 5px;
+}
+
+.container .block:nth-child(2) .background .background-login .miForm .form-group .mi-input:focus {
+  border: 1px solid #61c0f7;
+  border-bottom: 3px solid #61c0f7;
+  -webkit-box-shadow: 1px 1px 10px #61c0f7;
+          box-shadow: 1px 1px 10px #61c0f7;
+}
+
+.container .block:nth-child(2) .background .background-login .miForm .btn-enviar {
+  padding: 1rem;
+  outline: none;
+  border: 0;
+  background-color: #8BBF32;
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 10px #35353573;
+          box-shadow: 1px 1px 10px #35353573;
+  border-radius: 5px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.container .block:nth-child(2) .background .background-login .miForm .btn-enviar:hover {
+  -webkit-box-shadow: 1px 1px 10px #353535cc;
+          box-shadow: 1px 1px 10px #353535cc;
+  background-color: #8BBF32;
+}
+
+@media screen and (max-width: 885px) {
+  .container .block:nth-child(1) {
+    display: none;
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .container .block:nth-child(2) .background .background-login .text-container h1 {
+    font-size: 2rem;
+  }
+  .container .block:nth-child(2) .background .background-login .miForm .form-group {
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=login.css.map */

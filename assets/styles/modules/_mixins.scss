@@ -1,0 +1,153 @@
+/*Quitar border de bootstrap a las tablas*/
+@mixin nonTableBorder {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+/*Estilos a los  botones redireccionalbes*/
+@mixin mainTopButtons {
+    text-align: center;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background-color: $blanco;
+    color: $gris;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px $gris-suave;
+    transition: 0.1s ease-in-out;
+}
+/*Estilos a los botones redirreccionales presionados*/
+@mixin mainTopButtonsFocus {
+    text-align: center;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    background-color: $gris;
+    color: $blanco;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px $gris-suave;
+    transition: 0.1s ease-in-out;
+}
+/*Estilos a los bordes de los botones redirreccionales presionados*/
+@mixin mainTopButtons-border {
+    width: 100%;
+    height: 5px;
+    background-color: $gris-sombra;
+    border-radius: 10px;
+}
+/*Estilos a los botones redirreccionales presionados*/
+@mixin mainTopButtons-borderFocus {
+    width: 100%;
+    height: 5px;
+    background-color: $gris;
+    border-radius: 10px;
+}
+/*Estilos botones*/
+@mixin addButton {
+    background-color: $verde-agua;
+    border: 0;
+    padding: 0.6rem 1.5rem;
+    box-shadow: 1px 1px 20px $gris-suave;
+}
+
+@mixin border-tables-head {
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid $gris-suave;
+    border-bottom: 1px solid $gris-suave;
+}
+
+@mixin border-tables {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid $gris-suave;
+}
+
+@mixin btn-detail {
+    background-color: $verde-detalle;
+    border: 0;
+    box-shadow: 1px 1px 20px $gris-suave;
+}
+
+@mixin btn-edit {
+    background-color: $naranja-editar;
+    border: 0;
+    box-shadow: 1px 1px 20px $gris-suave;
+}
+@mixin btn-delete {
+    background-color: $carmesi;
+    border: 0;
+    box-shadow: 1px 1px 20px $gris-suave;
+}
+
+@mixin btn-confirm-add{
+    background-color: $vede-agua-claro;
+    padding: 0.5rem 2rem;
+    border: 0;
+    box-shadow: 1px 1px 10px  $gris-sombra;
+}
+@mixin btn-close-modal{
+    background-color: $azul-suave;
+    border:0;
+    padding: 0.5rem 2rem;
+    box-shadow: 1px 1px 10px  $gris-sombra;
+}
+@mixin btn-confirm-edit{
+    background-color: $naranja-editar;
+    padding: 0.5rem 2rem;
+    border: 0;
+    box-shadow: 1px 1px 10px  $gris-sombra;
+}
+@mixin btn-confirm-delete{
+    background-color: $carmesi;
+    padding: 0.5rem 2rem;
+    border: 0;
+    box-shadow: 1px 1px 10px  $gris-sombra;
+}
+
+/*Estilos de los badges para los estados*/
+@mixin badge-aviable{
+    background-color: $verde-detalle;
+    padding: 0.2rem 1rem;
+    border-radius: 50rem;
+    color: $blanco;
+}
+@mixin badge-pending{
+    background-color: $gris;
+    padding: 0.2rem 1rem;
+    border-radius: 50rem;
+    color: $blanco;
+}
+@mixin badge-expired{
+    background-color: $fucsia;
+    padding: 0.2rem 1rem;
+    border-radius: 50rem;
+    color: $blanco;
+}
+@mixin badge-attending{
+    background-color: $verde-detalle;
+    padding: 0.2rem 1rem;
+    border-radius: 50rem;
+    color: $blanco;
+}
+@mixin badge-enabled{
+    background-color: $verde-detalle;
+    padding: 0.2rem 1rem;
+    border-radius: 50rem;
+    color: $blanco;
+}
+@mixin badge-disabled{
+    background-color: $gris;
+    padding: 0.2rem 1rem;
+    border-radius: 50rem;
+    color: $blanco;
+    
+}
+
+@mixin badge-not-enabled{
+    background-color: $naranja-editar;
+    padding: 0.2rem 1rem;
+    border-radius: 50rem;
+    color: $blanco;
+    display: flex;
+    text-align: center;
+
+}

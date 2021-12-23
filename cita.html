@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Fisio Rehab Center</title>
+
+    <!--Estilos CSS de bootstrap-->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/styles.css">
+
+    <!--Estilos SCSS personalizados-->
+    <link rel="stylesheet" href="assets/styles/dashboard/dashboard.css" type="text/css">
+
+    <!--CDN de font-awesome y datatables-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" />
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand nav-superior">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3 logo" href="general.html"><img src="assets/image/Logo.jpg" alt="Logo" class="logo-img"></a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 burger" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 dropdown-admin">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle activador" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/image/avatar.svg" alt="avatar" class="avatar"> &nbsp&nbsp Pedro &nbsp&nbsp&nbsp</a>
+                <ul class="dropdown-menu dropdown-menu-end link" aria-labelledby="navbarDropdown">
+                    <li class="link-item"><a class="dropdown-item ref" href="#!"><i class="fas fa-user-cog"></i>&nbsp&nbspConfiguración</a></li>
+                    <li class="link-item"><a class="dropdown-item ref" href="#!"><i class="fas fa-exclamation-triangle"></i>&nbsp&nbspActividades semanales</a></li>
+                    <li class="link-item"><a class="dropdown-item ref" href="#!"><i class="fas fa-sign-out-alt"></i>&nbsp&nbspCerrar sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav" class="mt-4 layout-sidenav">
+        <div id="layoutSidenav_nav" class="layout-nav">
+            <nav class="sb-sidenav accordion acordeon" id="sidenavAccordion">
+                <div class="sb-sidenav-menu mt-5 menu">
+                    <div class="nav">
+                        <a class="nav-link nav-item" href="cita.html"><i class="fas fa-child"></i>&nbsp Citas</a>
+                        <a class="nav-link nav-item" href="servicio.html"><i class="fas fa-lungs"></i>&nbsp Servicios</a>
+                        <a class="nav-link nav-item" href="empleado.html"><i class="fas fa-spa"></i>&nbsp Empleados</a>
+                        <a class="nav-link nav-item" href="cliente.html"><i class="fas fa-address-book"></i>&nbsp Clientes</a>
+                        <!--<a class="nav-link nav-item" href="facturacion.html"><i class="fas fa-address-card"></i>&nbsp Facturacion</a>-->
+
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content" class="layout-content">
+            <main>
+                <div class="container-fluid px-4 contenedor-fluido">
+                    <div class="botones-direct pt-4">
+                        <div class="botones-container">
+                            <ul class="buttons-list">
+                                <li class="button-item"><a href="cita.html">CITAS</a>
+                                    <div class="border"></div>
+                                </li>
+                                <li class="button-item"><a href="cita_reservada.html">CITAS RESERVADAS</a>
+                                    <div class="border"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-agregar-container">
+                            <!-- Disparador Agregar -->
+                            <button type="button" class="btn btn-primary btn-agregar" data-bs-toggle="modal" data-bs-target="#modal_agregar">
+                                <i class="fas fa-plus"></i> &nbsp; AGREGAR CITA
+                            </button>
+                            <!-- Modal agregar-->
+                            <div class="modal fade mt-4 mf" id="modal_agregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">AGREGAR CITA</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group mb-3">
+                                                    <label for="nro_cita" class="mb-1">Numero de cita</label>
+                                                    <input type="number" class="form-control" id="nro_cita" placeholder="Autogenerado" disabled=true>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <label for="fecha_cita" class="mb-1">Seleccione fecha </label>
+                                                    <input type="date" class="form-control" id="fecha_cita" placeholder="Seleccione fecha">
+                                                </div>
+                                                <div class="form-group mb-2">
+                                                    <label for="empleado_a_cargo" class="mb-1">Seleccione empleado a cargo </label>
+                                                    <select class="form-select" aria-label="Default select example" >
+                                                        <option selected>Seleccione</option>
+                                                        <option value="1" >Jorge</option>
+                                                        <option value="2">Pedro</option>
+                                                        <option value="3">Daniel</option>
+                                                      </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary btn-close-modal" data-bs-dismiss="modal"><i class="fas fa-times"></i> &nbsp; Cerrar </button>
+                                            <button type="button" class="btn btn-secondary btn-confirm-add"><i class="fas fa-check"></i> &nbsp; Confirmar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table id="example" class="table table-responsive" style="width:100%">
+                            <thead>
+                                <tr >
+                                    <th >NRO DE CITA</th>
+                                    <th>FECHA</th>
+                                    <th>EMPLEADO A CARGO</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>001</td>
+                                    <td>24/05/2022</td>
+                                    <td>Daniel</td>
+                                    <td><span class="badge-enabled">Disponible</span></td>
+                                    <td>
+                                        <!-- Disparador Detalle -->
+                                        <button type="button" class="btn btn-primary detail" data-bs-toggle="modal" data-bs-target="#modal_ver"
+                                            param1="001"
+                                            param2="24/05/22"
+                                            param3="Daniel"
+                                            param4="Disponible"
+                                        >
+                                            Detalles
+                                        </button>
+                                        <!-- Disparador Editar -->
+                                        <button type="button" class="btn btn-primary edit" data-bs-toggle="modal" data-bs-target="#modal_editar">
+                                            Editar
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                        <!-- Modal ver-->
+                        <div class="modal fade mf" id="modal_ver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">DETALLE DE CITA</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group mb-3">
+                                                <label for="nro_cita" class="mb-1">Numero de cita</label>
+                                                <input type="number" class="form-control" id="nro_cita" placeholder="Numero de cita" disabled=true>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="fecha_cita" class="mb-1">Fecha de cita </label>
+                                                <input type="date" class="form-control" id="fecha_cita" placeholder="Seleccione fecha" disabled=true value="24/12/2020">
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label for="empleado_a_cargo" class="mb-1">Empleado a cargo </label>
+                                                <select class="form-select" aria-label="Default select example" disabled=true>
+                                                    <option selected>Seleccione</option>
+                                                    <option value="1">Jorge</option>
+                                                    <option value="2">Pedro</option>
+                                                    <option value="3">Daniel</option>
+                                                  </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary btn-close-modal" data-bs-dismiss="modal"><i class="fas fa-check"></i> &nbsp;  Cerrar </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal editar-->
+                        <div class="modal fade mf" id="modal_editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">EDITAR CITA</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group mb-3">
+                                                <label for="nro_cita" class="mb-1">Numero de cita</label>
+                                                <input type="number" class="form-control" id="nro_cita" disabled=true> 
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="fecha_cita" class="mb-1">Seleccione fecha </label>
+                                                <input type="date" class="form-control" id="fecha_cita" >
+                                            </div>
+                                            <div class="form-group mb-2">
+                                                <label for="empleado_a_cargo" class="mb-1">Seleccione empleado a cargo </label>
+                                                <select class="form-select" aria-label="Default select example" >
+                                                    <option selected>Seleccione</option>
+                                                    <option value="1" >Jorge</option>
+                                                    <option value="2">Pedro</option>
+                                                    <option value="3">Daniel</option>
+                                                  </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-primary btn-close-modal" data-bs-dismiss="modal"><i class="fas fa-times"></i> &nbsp; Cerrar </button>
+                                        <button type="button" class="btn btn-secondary btn-confirm-edit"><i class="fas fa-check"
+                                            param1="001"
+                                            param2="24/05/2022"
+                                            param3="Daniel"
+                                            param4="Disponible"
+                                            ></i> &nbsp; Editar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+            <footer class="py-0 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Diseñado por Saul</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!--Jquery y bootstrap js-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!--Datatables Js-->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+    <script src="assets/js/setLanguage.js"></script>
+
+    <!--Script para modales-->
+    <script src="assets/js/cita.js"></script>
+</body>
+
+</html>
